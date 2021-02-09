@@ -11,9 +11,17 @@ const App = () => {
   return (
     <Fragment>
       <Header setPage={setPage} setQuery={setQuery} />
-      <PaginationOutlined page={page} totalPages={totalPages} setPage={setPage} />
+      <PaginationOutlined
+        page={page}
+        totalPages={totalPages}
+        setPage={setPage}
+      />
       <Products setTotalPages={setTotalPages} pageNumber={page} query={query} />
-      <PaginationOutlined page={page} totalPages={totalPages} setPage={setPage} />
+      <PaginationOutlined
+        page={page}
+        totalPages={totalPages}
+        setPage={setPage}
+      />
     </Fragment>
   );
 };
