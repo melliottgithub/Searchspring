@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  gridItem: {
+    alignSelf : 'stretch',
+  },
   paper: {
     padding: theme.spacing(2),
     textAlign: "center",
@@ -17,17 +20,19 @@ const useStyles = makeStyles((theme) => ({
 
 const API_URL = "https://api.searchspring.net/api/search/search.json";
 
-const renderGrid = (product) => {
-  return (
-    <Grid key={product.id} item xs={12} sm={6} md={4} lg={3} xl={2}>
-      <ProductCard {...product} />
-    </Grid>
-  );
-};
+
 
 const Products = ({ query, pageNumber, setTotalPages }) => {
   const [result, setResult] = useState(null);
   const classes = useStyles();
+  const renderGrid = (product) => {
+    return (
+      <Grid className={classes.gridItem} key={product.id} item xs={12} sm={6} md={4} lg={3} xl={2}>
+        <ProductCard {...product} />
+      </Grid>
+    );
+  };
+  
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(

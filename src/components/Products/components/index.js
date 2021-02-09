@@ -47,7 +47,7 @@ const ProductCard = ({
       <CardActionArea>
         <CardMedia
           component="img"
-          alt="Do not forget"
+          alt={title}
           height="500"
           image={thumbnailImageUrl}
           title={title}
